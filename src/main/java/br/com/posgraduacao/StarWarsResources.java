@@ -9,7 +9,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 @Path("starwars")
 @Produces(MediaType.APPLICATION_JSON)
 public class StarWarsResources {
-//    injeção de dependências deste atributos.
+    //    injeção de dependências deste atributos.
     @RestClient
     StarWarsService starWarsService;
 
