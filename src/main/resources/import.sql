@@ -11,4 +11,4 @@ VALUES (1,'Ana Silva', 1990),
        (10,'João Oliveira', 1999);
 
 
-alter sequence pessoa_sequencia restart with 7;
+-- alter sequence pessoa_sequencia restart with 7;
