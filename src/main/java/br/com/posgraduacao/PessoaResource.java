@@ -1,5 +1,6 @@
 package br.com.posgraduacao;
 
+import io.micrometer.core.annotation.Counted;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -13,9 +14,12 @@ import java.util.List;
 
 public class PessoaResource {
     @GET
+//    criando a própria métrica que ficará no arquivo de log do prometeus - valor será chamada no momento de log.
+    @Counted(value = "tempo.pessoa")
     public List<Pessoa> getPessoas() {
         return Pessoa.listAll();
     }
+
     @GET
     @Path("ano")
     public List<Pessoa> findByAnoNascimento(@QueryParam("anoNascimento") int anoNascimento) {
